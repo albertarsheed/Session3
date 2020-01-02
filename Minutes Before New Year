@@ -1,0 +1,14 @@
+import java.util.*;
+public class CupCake {
+   public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int t=sc.nextInt();
+	int min=0;
+	while(t-->0) {
+		int n1=sc.nextInt();
+		int n2=sc.nextInt();
+		min=((23-n1)*60)+(60-n2);
+		System.out.println(min);
+	}
+}
+}
