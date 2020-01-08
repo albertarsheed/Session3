@@ -1,0 +1,41 @@
+import java.util.*;
+public class gertfder {
+
+	public static void main(String[] args) 
+	{
+
+		
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t-->0) {
+			int n=sc.nextInt();
+			String s=sc.next();
+			char c[]=s.toCharArray();
+			int u=0;int y=0;
+			while(u!=-1) {int jj=0;
+				for(int i=1;i<n;i++) {
+					if(c[i]=='P'&&c[i-1]=='A') {
+						c[i]='A';
+						i++;jj+=1;
+					}
+				}
+				if(s.equals(String.valueOf(c))||n==1) {
+					y=0;u=-1;
+				}
+				if(jj==0) {
+					u=-1;
+				}else {
+					y++;
+				}
+			}
+			
+			System.out.println(y);	
+		}
+		
+}
+	
+}
+
+
+
+
