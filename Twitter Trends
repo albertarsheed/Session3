@@ -1,0 +1,58 @@
+/*
+Twitter shows trends in order to make its users aware of the trending news. These trends are nothing but trending hashtags that the users are tweeting about. For example: If thousands of users are talking about United States by adding a hashtag #US in their tweet, then US will be a trending hashtag. Couple of example tweets with hashtag #US could be:
+
+Donald Trump becomes the 45th #US President
+Roger Federer wins #US Open for 5th time
+Given a list of N tweets, your task is to find top the five trending hashtags. Each tweet, let's call it S, will contain at least one one word with hashtag. There will be maximum of three hashtags in any tweet. All hashtags in a single tweet will be unique.
+
+Input:
+First line of the input will contain N denoting the number of tweets.
+Next N lines, each will contain a string S.
+
+*/
+import java.io.*;
+import java.security.KeyStore.Entry;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+public class newgenre {
+   public static void main(String[] args)throws Exception {
+	BufferedReader bf=new BufferedReader(new InputStreamReader(System.in));
+	int n=Integer.parseInt(bf.readLine().trim());
+	HashMap<String,Integer>hm=new HashMap();
+	while(n-->0) {
+		String s=bf.readLine();
+		
+	   Matcher m=Pattern.compile("[#]{1}[a-zA-Z]*").matcher(s);
+	   while(m.find()) {
+		   if(hm.get(m.group())==null) {
+			   hm.put(m.group(), 1);
+		   }else {
+			   hm.put(m.group(), hm.get(m.group())+1);
+		   }
+	   }
+   }int h=0;
+	   while(h<5) { 
+	Set<String> ss=hm.keySet();int u=0;StringBuffer d=new StringBuffer("yuuy");
+	     for(String f:ss) {
+	    	 if(hm.get(f)>u) {
+	    		 u=hm.get(f);
+	    		 d.delete(0, d.length());
+	    		 d.append(f);
+	    		 
+	    	 }
+	    	 if(hm.get(f)==u) {
+	    		 if(f.compareTo(d.toString())<1) {
+	    			 d.delete(0, d.length());
+	    			 d.append(f);
+	    		 }
+	    	 }
+	    	 
+	     }
+	     System.out.println(d.toString());
+	     hm.remove(d.toString());
+	     h=h+1;
+	   }
+}
+}
