@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class optimizationProblem {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		
+		int t=sc.nextInt();
+		while(t-->0) {
+		int n=sc.nextInt();
+		int d=sc.nextInt();int z=1;
+		if(d<=n) {
+			System.out.println("YES");
+		}else {
+			
+			for(int i=1;i<=n;i++) {
+				double s=(double)d/((double)i+1);
+				int f=(int)Math.ceil(s);
+				if(i+f<=n) {
+					System.out.println("YES");z=0;break;
+				}
+			}
+			if(z==1) {
+				System.out.println("NO");
+			}
+		}
+		
+		}
+
+	}
+
+}
