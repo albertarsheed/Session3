@@ -1,0 +1,37 @@
+import java.util.*;
+
+public class PracticeThisOne {
+
+	public static void main(String[] args) {
+		  Scanner sc=new Scanner(System.in);
+		  String s=sc.next();
+		  String r1=sc.next();
+		  String r2=sc.next();
+		  String d=new StringBuilder(s).reverse().toString();
+		  boolean forward=false,backward=false;int i=0;
+		   if(s.contains(r1)) {
+			  i=s.indexOf(r1);
+			  i=i+r1.length();
+			  if(s.substring(i).contains(r2)) {
+				  forward=true;
+			  }
+		   }
+		   if(d.contains(r1)) {
+				  i=d.indexOf(r1);
+				  i=i+r1.length();
+				  if(d.substring(i).contains(r2)) {
+					  backward=true;
+				  }
+			   }
+		   if(forward==true&&backward==true) {
+			   System.out.println("both");
+		   }else if(forward==true) {
+			   System.out.println("forward");
+		   }else if(backward==true) {
+			   System.out.println("backward");
+		   }else {
+			   System.out.println("fantasy");
+		   }
+	}
+
+}
