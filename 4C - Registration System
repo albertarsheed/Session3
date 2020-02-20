@@ -1,0 +1,26 @@
+//package objectEmployee;
+
+import java.util.*;
+
+public class QueueTrial 
+{
+   public static void main(String[] args) {
+	Scanner sc =new Scanner(System.in);
+	  int t=sc.nextInt();
+	  HashMap<String,Integer> hs=new HashMap();
+	  while(t-->0) {
+		  String s=sc.next();
+		  if(hs.get(s)==null)
+		  {
+			  hs.put(s, 1);
+			  System.out.println("OK");
+		  }
+		  else 
+		  {
+			 hs.put(s, hs.get(s)+1);
+			 System.out.println(s+""+(hs.get(s)-1));
+		  }
+	  }
+	  sc.close();
+}
+}
