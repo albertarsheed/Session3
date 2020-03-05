@@ -1,0 +1,55 @@
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+       
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+       String s1[]=br.readLine().split(" ");
+       int n=Integer.parseInt(s1[0]);
+       int q=Integer.parseInt(s1[1]);
+       int a[]=new int[n];
+       int b[]=new int[n];
+       String s2[]=br.readLine().split(" ");
+       String s3[]=br.readLine().split(" ");
+       for(int i=0;i<n;i++)
+       {
+           a[i]=Integer.parseInt(s2[i]);
+           b[i]=Integer.parseInt(s3[i]);
+       }
+       while(q-->0)
+       {
+           
+            String s4[]=br.readLine().split(" ");
+           int in=Integer.parseInt(s4[0]);
+           int l=Integer.parseInt(s4[1]);
+           int r=Integer.parseInt(s4[2]);
+           long sum=0;
+           if(in==1)
+           {
+               for(int i=l-1;i<r;i+=2)
+               {
+                   sum+=a[i];
+               }
+               for(int i=l;i<r;i+=2)
+               {
+                   sum+=b[i];
+               }
+           }
+           else
+           {
+               for(int i=l-1;i<r;i+=2)
+               {
+                   sum+=b[i];
+               }
+               for(int i=l;i<r;i+=2)
+               {
+                   sum+=a[i];
+               }
+               
+           }
+           System.out.println(sum);
+       }
+    }
+}
